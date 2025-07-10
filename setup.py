@@ -1,4 +1,5 @@
 from setuptools import setup
+from pyclash    import __version__
 
 with open("requirements.txt", "r") as f:
     req_list = f.read().split("\n")[:-1]
@@ -8,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name                          = "PyClash",
-    version                       = "0.0.1",
+    version                       = __version__,
     description                   = "API Wrapper for Clash of Clans",
     long_description              = long_description,
     long_description_content_type = "text/markdown",
