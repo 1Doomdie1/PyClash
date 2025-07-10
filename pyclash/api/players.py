@@ -17,7 +17,6 @@ class PlayersAPI(Client):
         )
 
         return Response(body = req.json(), status_code = req.status_code)
-        
 
     def verify_token(
         self,
