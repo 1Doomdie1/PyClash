@@ -6,7 +6,7 @@ class PlayersAPI(Client):
     def __init__(self, apiKey):
         super().__init__(apiKey)
         self.endpoint = "players"
-    
+
     def info(
         self,
         playerTag: str 
