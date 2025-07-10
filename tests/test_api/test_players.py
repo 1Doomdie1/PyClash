@@ -17,13 +17,13 @@ class test_PlayersAPI(TestCase):
     def test_info(self):
         resp = self.playersAPI.info(self.playerTag)
 
-        self.assertEqual(resp.get("status_code"), 200)
-        self.assertEqual(type(resp.body)), Player)
-        self.assertEqual(resp.get("body").tag, self.playerTag)
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(type(resp.body), Player)
+        self.assertEqual(resp.body.tag, self.playerTag)
 
     def test_verify_token(self):
         resp = self.playersAPI.verify_token(self.playerTag, self.account_api_token)
 
-        self.assertEqual(resp.get("status_code"), 200)
+        self.assertEqual(resp.status_code, 200)
         self.assertEqual(type(resp.body), VerifyToken)
-        self.assertEqual(resp.get("body").tag, self.playerTag)
+        self.assertEqual(resp.body.tag, self.playerTag)
