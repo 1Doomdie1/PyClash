@@ -2,16 +2,25 @@ from pydantic import BaseModel
 from typing_extensions import Literal, List, Optional, Dict
 
 
+class BadgeUrls(BaseModel):
+    small:  str
+    large:  str
+    medium: str
+
 class PlayerClan(BaseModel):
     tag:       str
     clanLevel: int
     name:      str
-    badgeUrls: dict
+    badgeUrls: BadgeUrls
+
+class IconUrls(BaseModel):
+    small:  str
+    medium: str
 
 class League(BaseModel):
     name:     str
     id:       int
-    iconUrls: dict
+    iconUrls: IconUrls
 
 class BuilderBaseLeague(BaseModel):
     name: str
