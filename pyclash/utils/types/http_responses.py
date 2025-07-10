@@ -1,7 +1,7 @@
 from pyclash.utils.types.player import Player
-from pyclash.utils.types.token import *
-from pydantic import BaseModel
-from typing_extensions import Optional, Dict, Union
+from pyclash.utils.types.token  import *
+from pydantic                   import BaseModel
+from typing_extensions          import Optional, Dict, Union
 
 
 class ClientError(BaseModel):
