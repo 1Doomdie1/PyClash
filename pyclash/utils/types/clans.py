@@ -1,7 +1,8 @@
-from pydantic                   import BaseModel
-from typing_extensions          import List, Optional
-from pyclash.utils.types.common import Label, BadgeUrls, Paging
-from pyclash.utils.types.player import League, BuilderBaseLeague, PlayerHouse
+from pyclash.utils.types.location import Location 
+from pydantic                     import BaseModel
+from typing_extensions            import List, Optional
+from pyclash.utils.types.common   import Label, BadgeUrls, Paging
+from pyclash.utils.types.player   import League, BuilderBaseLeague, PlayerHouse
 
 
 class WarLeague(BaseModel):
@@ -32,12 +33,6 @@ class Language(BaseModel):
     name:         str
     id:           int
     languageCode: str
-
-class Location(BaseModel):
-    id:            int
-    name:          str
-    isCountry:     bool
-    countryCode:   Optional[str] = None
 
 class ClanDistrictData(BaseModel):
     name:              str
@@ -201,4 +196,35 @@ class ClanWarLogEntry(BaseModel):
 
 class ClanWarLog(BaseModel):
     items:  List[ClanWarLogEntry]
+    paging: Paging
+
+class ClanCapitalRanking(BaseModel):
+    clanPoints:        Optional[int] = None
+    clanCapitalPoints: int
+
+class ClanCapitalRankings(BaseModel):
+    items:  List[ClanCapitalRanking]
+    paging: Paging
+
+class ClanRanking(BaseModel):
+    clanLevel:    int
+    clanPoints:   int
+    location:     Location
+    members:      int
+    tag:          str
+    name:         str
+    rank:         int
+    previousRank: int
+    badgeUrls:    BadgeUrls
+
+class ClanRankings(BaseModel):
+    items:  List[ClanRanking]
+    paging: Paging
+
+class ClanBuilderBaseRanking(BaseModel):
+    clanBuilderBasePoints: int
+    clanPoints:            Optional[int] = None
+
+class ClanBuilderBaseRankings(BaseModel):
+    items:  List[ClanBuilderBaseRanking]
     paging: Paging
