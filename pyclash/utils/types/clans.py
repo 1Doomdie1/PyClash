@@ -1,6 +1,6 @@
 from pydantic                   import BaseModel
 from typing_extensions          import List, Optional
-from pyclash.utils.types.common  import Label, BadgeUrls, Paging
+from pyclash.utils.types.common import Label, BadgeUrls, Paging
 from pyclash.utils.types.player import League, BuilderBaseLeague, PlayerHouse
 
 
@@ -202,25 +202,3 @@ class ClanWarLogEntry(BaseModel):
 class ClanWarLog(BaseModel):
     items:  List[ClanWarLogEntry]
     paging: Paging
-
-# class ClanWarLeagueClanMember(BaseModel):
-#     tag:           str
-#     townHallLevel: int
-#     name:          str
-
-# class ClanWarLeagueClan(BaseModel):
-#     tag:       str
-#     clanLevel: int
-#     name:      str
-#     members:   List[ClanWarLeagueClanMember]
-#     badgeUrls: BadgeUrls
-
-# class ClanWarLeagueRound(BaseModel):
-#     warTags: List[str]
-
-# class ClanWarLeagueGroup(BaseModel):
-#     tag:    str
-#     state:  str
-#     season: str
-#     clans:  List[ClanWarLeagueClan]
-#     rounds: List[ClanWarLeagueRound]

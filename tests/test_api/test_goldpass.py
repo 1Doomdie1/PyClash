@@ -1,8 +1,8 @@
-from pyclash.utils.types.common import GoldPass
 from os                         import getenv
+from pyclash.utils.types.common import GoldPass
 from unittest                   import TestCase
-from pyclash                    import GoldPassAPI
 from dotenv                     import load_dotenv
+from pyclash                    import GoldPassAPI
 
 
 class test_GoldPassAPI(TestCase):

@@ -1,5 +1,5 @@
-from typing_extensions         import List
-from pydantic                  import BaseModel
+from typing_extensions          import List
+from pydantic                   import BaseModel
 from pyclash.utils.types.common import Paging, IconUrls
 
 
