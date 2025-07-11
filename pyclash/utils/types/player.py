@@ -1,7 +1,7 @@
-from pyclash.utils.types.leagues import League 
 from pydantic                    import BaseModel
 from typing_extensions           import List, Optional, Dict
-from pyclash.utils.types.common  import BadgeUrls, IconUrls, Label, Paging
+from pyclash.utils.types.common  import BadgeUrls, IconUrls, Label, Paging 
+from pyclash.utils.types.leagues import League, WarAndCapitalAndBuilderBaseLeague
 
 
 class PlayerClan(BaseModel):
@@ -74,6 +74,20 @@ class PlayerRanking(BaseModel):
 
 class PlayerRankings(BaseModel):
     items:  List[PlayerRanking]
+    paging: Paging
+
+class PlayerBuilderBaseRanking(BaseModel):
+    clan:                Optional[PalyerRankingClan] = None
+    builderBaseLeague:   WarAndCapitalAndBuilderBaseLeague
+    tag:                 str
+    name:                str
+    expLevel:            int
+    rank:                int
+    previousRank:        int
+    builderBaseTrophies: int
+
+class PlayerBuilderBaseRankings(BaseModel):
+    items:  List[PlayerBuilderBaseRanking]
     paging: Paging
 
 class Player(BaseModel):
