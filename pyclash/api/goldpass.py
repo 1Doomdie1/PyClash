@@ -1,4 +1,4 @@
-from pyclash                            import Client
+from pyclash.client                            import Client
 from pyclash.utils.types.http_responses import Response
 
 class GoldPassAPI(Client):

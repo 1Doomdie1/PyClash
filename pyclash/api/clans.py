@@ -1,5 +1,5 @@
 from urllib.parse                       import quote
-from pyclash                            import Client
+from pyclash.client                            import Client
 from pyclash.utils.types.http_responses import Response
 from typing_extensions                  import Optional, List
 
