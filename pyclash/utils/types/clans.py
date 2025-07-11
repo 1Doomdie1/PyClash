@@ -1,6 +1,6 @@
 from pydantic                   import BaseModel
 from typing_extensions          import List, Optional
-from pyclash.utils.types.other  import Label, BadgeUrls, Paging
+from pyclash.utils.types.common  import Label, BadgeUrls, Paging
 from pyclash.utils.types.player import League, BuilderBaseLeague, PlayerHouse
 
 
