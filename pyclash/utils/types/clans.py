@@ -193,7 +193,7 @@ class ClanWar(BaseModel):
 class ClanWarLogEntry(BaseModel):
     clan:             WarClan
     teamSize:         int
-    attacksPerMember: int
+    attacksPerMember: Optional[int] = None
     battleModifier:   str
     opponent:         WarClan
     endTime:          str
