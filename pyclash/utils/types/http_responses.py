@@ -1,4 +1,5 @@
 from pyclash.utils.types.token   import *
+from pyclash.utils.types.common  import GoldPass
 from pydantic                    import BaseModel
 from typing_extensions           import Optional, Dict, Union
 from pyclash.utils.types.player  import Player, PlayerRankings
@@ -18,7 +19,8 @@ class Response(BaseModel):
                 ClanCapitalRaidSeasonList, ClanWar, ClanWarLog,
                 #ClanWarLeagueGroup
                 WarAndCapitalAndBuilderBaseLeagues, Leagues, League,
-                LeagueSeasons, PlayerRankings, WarAndCapitalAndBuilderBaseLeague
+                LeagueSeasons, PlayerRankings, WarAndCapitalAndBuilderBaseLeague,
+                GoldPass
             ]
     # body: PlayerRankings
     status_code: int

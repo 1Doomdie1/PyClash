@@ -22,3 +22,7 @@ class Cursors(BaseModel):
 
 class Paging(BaseModel):
     cursors: Cursors
+
+class GoldPass(BaseModel):
+    startTime: str
+    endTime:   str
