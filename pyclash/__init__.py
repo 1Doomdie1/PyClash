@@ -1,4 +1,4 @@
+from .api    import *
 from .client import *
-from .api import *
 
 __version__ = "0.7.0"
