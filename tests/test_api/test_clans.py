@@ -2,7 +2,12 @@ from os                         import getenv
 from unittest                   import TestCase
 from pyclash                    import ClansAPI
 from dotenv                     import load_dotenv
-from pyclash.utils.types.clans  import ClanList, Clan, ClanMemberList, ClanCapitalRaidSeasonList, ClanWar, ClanWarLog #, ClanWarLeagueGroup
+from pyclash.utils.types.clans  import (
+    ClanList, Clan, ClanMemberList, 
+    ClanCapitalRaidSeasonList, 
+    ClanWar, ClanWarLog
+    ) 
+    #, ClanWarLeagueGroup)
 
 
 class test_ClansAPI(TestCase):
