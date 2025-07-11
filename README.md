@@ -4,7 +4,7 @@ A simple Python wrapper for Clash Of Clans.
 ## ⚙️Installation
 
 ```bash
-pip install https://github.com/1Doomdie1/PyClash.git
+pip install git+https://github.com/1Doomdie1/PyClash.git@main
 ```
 
 ## 🔄 Usage
