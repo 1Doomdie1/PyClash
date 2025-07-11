@@ -2,7 +2,6 @@ from urllib.parse                       import quote
 from pyclash                            import Client
 from pyclash.utils.types.http_responses import Response
 from typing_extensions                  import Optional, List
-from json import dumps
 
 class ClansAPI(Client):
     def __init__(self, apiKey):
