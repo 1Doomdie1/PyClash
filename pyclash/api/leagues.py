@@ -1,6 +1,6 @@
 from pyclash                            import Client
-from pyclash.utils.types.http_responses import Response
 from typing_extensions                  import Optional
+from pyclash.utils.types.http_responses import Response
 
 class LeaguesAPI(Client):
     def __init__(self, apiKey):

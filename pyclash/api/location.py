@@ -1,7 +1,7 @@
 from pyclash                            import Client
 from typing_extensions                  import Optional
 from pyclash.utils.types.http_responses import Response
-from pyclash.utils.types.clans          import ClanCapitalRankings, ClanBuilderBaseRankings
+from pyclash.utils.types.clans          import ClanCapitalRankings
 
 class LocationAPI(Client):
     def __init__(self, apiKey):
