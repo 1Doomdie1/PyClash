@@ -1,5 +1,5 @@
-from typing_extensions import Optional
 from pydantic          import BaseModel
+from typing_extensions import Optional, List
 
 
 class BadgeUrls(BaseModel):
@@ -26,3 +26,7 @@ class Paging(BaseModel):
 class GoldPass(BaseModel):
     startTime: str
     endTime:   str
+
+class Labels(BaseModel):
+    items:  List[Label]
+    paging: Paging
