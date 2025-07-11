@@ -6,9 +6,7 @@ from pyclash.utils.types.clans  import (
     ClanList, Clan, ClanMemberList, 
     ClanCapitalRaidSeasonList, 
     ClanWar, ClanWarLog
-    ) 
-    #, ClanWarLeagueGroup)
-
+) 
 
 class test_ClansAPI(TestCase):
     def setUp(self):
@@ -53,9 +51,3 @@ class test_ClansAPI(TestCase):
 
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(type(resp.body), ClanWarLog)
-    
-    # def test_war_leagues(self):
-    #     resp = self.clansAPI.war_leagues(warTag = self.clanTag)
-
-    #     self.assertEqual(resp.status_code, 200)
-    #     self.assertEqual(type(resp.body), ClanWarLeagueGroup)

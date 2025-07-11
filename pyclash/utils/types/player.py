@@ -1,7 +1,7 @@
+from pyclash.utils.types.leagues import League 
 from pydantic                    import BaseModel
 from typing_extensions           import List, Optional, Dict
-from pyclash.utils.types.common   import BadgeUrls, IconUrls, Label, Paging
-from pyclash.utils.types.leagues import League 
+from pyclash.utils.types.common  import BadgeUrls, IconUrls, Label, Paging
 
 
 class PlayerClan(BaseModel):

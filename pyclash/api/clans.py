@@ -79,16 +79,6 @@ class ClansAPI(Client):
         )
         return Response(body = req.json(), status_code = req.status_code)
 
-    # def current_league_war(
-    #     self,
-    #     clanTag: str
-    # ) -> Response:
-    #     req = self._http_request(
-    #         "GET",
-    #         f"{self.endpoint}/{quote(clanTag)}/leaguegroup"
-    #     )
-    #     return Response(body = req.json(), status_code = req.status_code)
-
     def war_log(
         self,
         clanTag: str,
@@ -102,13 +92,3 @@ class ClansAPI(Client):
             params = {key: value for key, value in locals().items() if value is not None and key not in ("self", "clanTag")}
         )
         return Response(body = req.json(), status_code = req.status_code)
-    
-    # def war_leagues(
-    #     self,
-    #     warTag
-    # ) -> Response:
-    #     req = self._http_request(
-    #         "GET",
-    #         f"clanwarleagues/{self.endpoint}/{quote(warTag)}"
-    #     )
-    #     return Response(body = req.json(), status_code = req.status_code)
