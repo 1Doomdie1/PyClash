@@ -78,7 +78,17 @@ class ClansAPI(Client):
             f"{self.endpoint}/{quote(clanTag)}/currentwar"
         )
         return Response(body = req.json(), status_code = req.status_code)
-    
+
+    # def current_league_war(
+    #     self,
+    #     clanTag: str
+    # ) -> Response:
+    #     req = self._http_request(
+    #         "GET",
+    #         f"{self.endpoint}/{quote(clanTag)}/leaguegroup"
+    #     )
+    #     return Response(body = req.json(), status_code = req.status_code)
+
     def war_log(
         self,
         clanTag: str,
