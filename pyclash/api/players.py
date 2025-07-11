@@ -7,7 +7,7 @@ class PlayersAPI(Client):
         super().__init__(apiKey)
         self.endpoint = "players"
 
-    def info(
+    def get_player_info(
         self,
         playerTag: str 
     ) -> Response:
@@ -18,7 +18,7 @@ class PlayersAPI(Client):
 
         return Response(body = req.json(), status_code = req.status_code)
 
-    def verify_token(
+    def verify_player_token(
         self,
         playerTag: str,
         token:     str
