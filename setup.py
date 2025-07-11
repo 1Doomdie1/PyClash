@@ -1,5 +1,6 @@
 from setuptools import setup
-from pyclash    import __version__
+
+__version__ = "v1.0.0"
 
 with open("requirements.txt", "r") as f:
     req_list = f.read().split("\n")[:-1]
