@@ -1,7 +1,8 @@
-from pyclash.utils.types.player import Player
 from pyclash.utils.types.token  import *
+from pyclash.utils.types.player import Player
 from pydantic                   import BaseModel
 from typing_extensions          import Optional, Dict, Union
+from pyclash.utils.types.clans  import ClanList, Clan, ClanMemberList, ClanCapitalRaidSeasonList, ClanWar, ClanWarLog #, ClanWarLeagueGroup
 
 
 class ClientError(BaseModel):
@@ -11,5 +12,9 @@ class ClientError(BaseModel):
     detail:  Optional[Dict] = None
 
 class Response(BaseModel):
-    body:        Union[Player, VerifyToken, ClientError]
+    body: Union[ClientError, Player, VerifyToken, 
+                ClanList, Clan, ClanMemberList, 
+                ClanCapitalRaidSeasonList, ClanWar, ClanWarLog
+                #ClanWarLeagueGroup
+            ]
     status_code: int

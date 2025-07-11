@@ -1,21 +1,13 @@
-from pydantic import BaseModel
-from typing_extensions import Literal, List, Optional, Dict
+from pydantic                  import BaseModel
+from typing_extensions         import List, Optional, Dict
+from pyclash.utils.types.other import BadgeUrls, IconUrls, Label
 
-
-class BadgeUrls(BaseModel):
-    small:  str
-    large:  str
-    medium: str
 
 class PlayerClan(BaseModel):
     tag:       str
     clanLevel: int
     name:      str
     badgeUrls: BadgeUrls
-
-class IconUrls(BaseModel):
-    small:  str
-    medium: str
 
 class League(BaseModel):
     name:     str
@@ -43,13 +35,8 @@ class PlayerItemLevel(BaseModel):
     level:              int
     name:               str
     maxLevel:           int
-    village:            Literal["home", "builderBase", "clanCapital"]
+    village:            str
     equipment:          Optional[List[Dict]] = None
-
-class Label(BaseModel):
-    name:     str
-    id:       int
-    iconUrls: dict
 
 class PlayerAchievementProgress(BaseModel):
     stars:          int
@@ -58,11 +45,11 @@ class PlayerAchievementProgress(BaseModel):
     target:         int
     info:           str
     completionInfo: Optional[str] = None
-    village:        Literal["home", "builderBase", "clanCapital"]
+    village:        str
 
 class PlayerHouseElement(BaseModel):
     id:   int
-    type: Literal["ground", "roof", "foot", "decoration", "walls"]
+    type: str
 
 class PlayerHouse(BaseModel):
     elements: List[PlayerHouseElement]
@@ -71,8 +58,8 @@ class Player(BaseModel):
     clan:                     PlayerClan
     league:                   League
     builderBaseLeague:        BuilderBaseLeague
-    role:                     Literal["not_member", "member", "leader", "admin", "coLeader"]
-    warPreference:            Literal["in", "out"]
+    role:                     str
+    warPreference:            str
     attackWins:               int
     defenseWins:              int
     townHallLevel:            int
