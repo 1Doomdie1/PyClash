@@ -178,8 +178,8 @@ if __name__ == "__main__":
 </details>
 
 <details>
-<summary>GoldPassAPI</summary>
-Access information about gold pass.
+<summary>LabelsAPI</summary>
+N/A
 
 ### Methods
 
