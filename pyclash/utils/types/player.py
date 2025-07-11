@@ -1,6 +1,7 @@
-from pydantic                  import BaseModel
-from typing_extensions         import List, Optional, Dict
-from pyclash.utils.types.other import BadgeUrls, IconUrls, Label
+from pydantic                    import BaseModel
+from typing_extensions           import List, Optional, Dict
+from pyclash.utils.types.other   import BadgeUrls, IconUrls, Label, Paging
+from pyclash.utils.types.leagues import League 
 
 
 class PlayerClan(BaseModel):
@@ -53,6 +54,27 @@ class PlayerHouseElement(BaseModel):
 
 class PlayerHouse(BaseModel):
     elements: List[PlayerHouseElement]
+
+class PalyerRankingClan(BaseModel):
+    tag:       str
+    name:      str
+    badgeUrls: BadgeUrls
+
+class PlayerRanking(BaseModel):
+    clan:         Optional[PalyerRankingClan] = None
+    league:       Optional[League] = None
+    attackWins:   int
+    defenseWins:  int
+    tag:          str
+    name:         str
+    expLevel:     int
+    rank:         int
+    previousRank: Optional[int] = None
+    trophies:     int
+
+class PlayerRankings(BaseModel):
+    items:  List[PlayerRanking]
+    paging: Paging
 
 class Player(BaseModel):
     clan:                     PlayerClan
