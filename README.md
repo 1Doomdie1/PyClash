@@ -1,4 +1,4 @@
-# About Pyclash
+# About PyClash
 A simple Python wrapper for Clash Of Clans.
 
 ## ⚙️Installation
@@ -8,18 +8,15 @@ pip install https://github.com/1Doomdie1/PyClash.git
 ```
 
 ## 🔄 Usage
-### Get Player Data
+
+### Using main Clash class
 ```python
-from pyclash import PlayersAPI
+from pyclash import Clash
 
-api = PlayersAPI("[YOUR-API-KEY]")
-playerInfo = api.get_player_info(playerTag = "#[PLAYER-TAG]")
+clash = Clash("[YOUR-API-KEY]")
+clan = clash.clan.get(clanTag = "#[CLAN-TAG]")
 
-print(type(playerInfo))
-
-
-===
->>> <class 'pyclash.utils.types.http_responses.Response'>
+print(clan.model_dump_json(indent = 4))
 ```
 
 ### Disabling SSL verification
@@ -33,6 +30,34 @@ disable_ssl_verification()
 ```
 
 ## Classes
+
+<details>
+<summary>Clash</summary>
+This class acts as the main wrapper for the API through which all endpoints can be accessed.
+
+### Attributes
+| **Attribute** | **Description**                     |
+|---------------|-------------------------------------|
+| `clans`       | Access clan specific information.   |
+| `labels`      | N/A                                 |
+| `players`     | Access player specific information. |
+| `leagues`     | Access league information.          |
+| `goldpass`    | Access information about gold pass. |
+| `locations`   | Access global and local rankings.   |
+
+### Usage:
+```python
+from pyclash import Clash
+
+def main():
+    clash = Clash("[YOUR-API-KEY]")
+    playerInfo = clash.players.get_payer_info(playerTag = "#[PLAYER-TAG]")
+
+if __name__ == "__main__":
+    main()
+```
+
+</details>
 
 <details>
 <summary>PlayersAPI</summary>
