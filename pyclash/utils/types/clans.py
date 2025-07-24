@@ -41,21 +41,21 @@ class ClanDistrictData(BaseModel):
 
 
 class ClanCapital(BaseModel):
-    capitalHallLevel: int
-    districts:        List[ClanDistrictData]
+    capitalHallLevel: Optional[int]                    = None
+    districts:        Optional[List[ClanDistrictData]] = None
 
 class Clan(BaseModel):
     warLeague:                   WarLeague
     capitalLeague:               CapitalLeague
     memberList:                  Optional[List[ClanMember]] = None
     tag:                         str
-    warLosses:                   Optional[int]          = None
+    warLosses:                   Optional[int]              = None
     clanPoints:                  int
     clanLevel:                   int
     warWinStreak:                int
     warWins:                     int
-    warTies:                     Optional[int]          = None
-    chatLanguage:                Optional[Language]     = None
+    warTies:                     Optional[int]              = None
+    chatLanguage:                Optional[Language]         = None
     clanBuilderBasePoints:       int
     clanCapitalPoints:           int
     requiredTrophies:            int
@@ -66,11 +66,11 @@ class Clan(BaseModel):
     warFrequency:                str
     labels:                      List[Label]
     name:                        str
-    location:                    Optional[Location]     = None
+    location:                    Optional[Location]         = None
     type:                        str
     members:                     int
-    description:                 Optional[str]          = None
-    clanCapital:                 Optional[ClanCapital]  = None
+    description:                 Optional[str]              = None
+    clanCapital:                 Optional[ClanCapital]      = None
     badgeUrls:                   BadgeUrls
 
 class ClanList(BaseModel):
