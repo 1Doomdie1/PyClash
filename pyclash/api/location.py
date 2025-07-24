@@ -17,7 +17,7 @@ class LocationAPI(Client):
         req = self._http_request(
             "GET",
             f"{self.endpoint}",
-            params = {key: value for key, value in locals().items() if value is not None and key is not "self"}
+            params = {key: value for key, value in locals().items() if value is not None and key != "self"}
         )
 
         return Response(body = req.json(), status_code = req.status_code)
