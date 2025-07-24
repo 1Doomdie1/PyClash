@@ -1,5 +1,5 @@
 # About PyClash
-A simple Python wrapper for Clash Of Clans.
+A simple Python wrapper for [Clash Of Clans API](https://developer.clashofclans.com/).
 
 ## ⚙️Installation
 
