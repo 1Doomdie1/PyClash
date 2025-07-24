@@ -1,4 +1,4 @@
-from pyclash.client                            import Client
+from pyclash.client                     import Client
 from typing_extensions                  import Optional
 from pyclash.utils.types.http_responses import Response
 

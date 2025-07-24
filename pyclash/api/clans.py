@@ -1,5 +1,5 @@
 from urllib.parse                       import quote
-from pyclash.client                            import Client
+from pyclash.client                     import Client
 from pyclash.utils.types.http_responses import Response
 from typing_extensions                  import Optional, List
 
@@ -7,13 +7,13 @@ class ClansAPI(Client):
     def __init__(self, apiKey):
         super().__init__(apiKey)
         self.endpoint = "clans"
-    
+
     def list(
         self,
         name:          Optional[str]       = None,
         warFrequency:  Optional[str]       = None,
         locationId:    Optional[int]       = None,
-        minMembers:    Optional[int]       = None,
+        minMembers:    Optional[int]       = 2,
         maxMembers:    Optional[int]       = None,
         minClanPoints: Optional[int]       = None,
         minClanLevel:  Optional[int]       = None,
@@ -39,7 +39,7 @@ class ClansAPI(Client):
             f"{self.endpoint}/{quote(clanTag)}"
         )
         return Response(body = req.json(), status_code = req.status_code)
-    
+
     def members(
         self,
         clanTag: str,
@@ -54,7 +54,7 @@ class ClansAPI(Client):
         )
 
         return Response(body = req.json(), status_code = req.status_code)
-    
+
     def capital_raid_seasons(
         self,
         clanTag: str,
